@@ -1,0 +1,11 @@
+C:\Users\rickasheye\source\repos\dClient\dClient\bin\Debug\netcoreapp2.2\dClient.deps.json
+C:\Users\rickasheye\source\repos\dClient\dClient\bin\Debug\netcoreapp2.2\dClient.runtimeconfig.json
+C:\Users\rickasheye\source\repos\dClient\dClient\bin\Debug\netcoreapp2.2\dClient.runtimeconfig.dev.json
+C:\Users\rickasheye\source\repos\dClient\dClient\bin\Debug\netcoreapp2.2\dClient.dll
+C:\Users\rickasheye\source\repos\dClient\dClient\obj\Debug\netcoreapp2.2\dClient.csprojAssemblyReference.cache
+C:\Users\rickasheye\source\repos\dClient\dClient\obj\Debug\netcoreapp2.2\dClient.csproj.CoreCompileInputs.cache
+C:\Users\rickasheye\source\repos\dClient\dClient\obj\Debug\netcoreapp2.2\dClient.AssemblyInfoInputs.cache
+C:\Users\rickasheye\source\repos\dClient\dClient\obj\Debug\netcoreapp2.2\dClient.AssemblyInfo.cs
+C:\Users\rickasheye\source\repos\dClient\dClient\bin\Debug\netcoreapp2.2\dClient.pdb
+C:\Users\rickasheye\source\repos\dClient\dClient\obj\Debug\netcoreapp2.2\dClient.dll
+C:\Users\rickasheye\source\repos\dClient\dClient\obj\Debug\netcoreapp2.2\dClient.pdb
