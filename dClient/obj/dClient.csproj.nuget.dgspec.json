@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\m\\OneDrive - Department of Education and Training\\Documents\\dClient-master\\dClient\\dClient.csproj": {}
+    "C:\\Users\\m\\Documents\\GitHub\\dClient\\dClient\\dClient.csproj": {}
   },
   "projects": {
-    "C:\\Users\\m\\OneDrive - Department of Education and Training\\Documents\\dClient-master\\dClient\\dClient.csproj": {
+    "C:\\Users\\m\\Documents\\GitHub\\dClient\\dClient\\dClient.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\m\\OneDrive - Department of Education and Training\\Documents\\dClient-master\\dClient\\dClient.csproj",
+        "projectUniqueName": "C:\\Users\\m\\Documents\\GitHub\\dClient\\dClient\\dClient.csproj",
         "projectName": "dClient",
-        "projectPath": "C:\\Users\\m\\OneDrive - Department of Education and Training\\Documents\\dClient-master\\dClient\\dClient.csproj",
+        "projectPath": "C:\\Users\\m\\Documents\\GitHub\\dClient\\dClient\\dClient.csproj",
         "packagesPath": "C:\\Users\\m\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\m\\OneDrive - Department of Education and Training\\Documents\\dClient-master\\dClient\\obj\\",
+        "outputPath": "C:\\Users\\m\\Documents\\GitHub\\dClient\\dClient\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -49,10 +49,6 @@
             "DSharpPlus": {
               "target": "Package",
               "version": "[3.2.3, )"
-            },
-            "GtkSharp": {
-              "target": "Package",
-              "version": "[3.22.25.56, )"
             }
           },
           "imports": [

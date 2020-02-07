@@ -212,8 +212,11 @@ namespace dClient
         {
             Console.WriteLine("*Farts* exit...", Color.Green);
             //Save the config here but add a few new entries
-            Program.config.defaultChannel = Program.listeningServer;
-            Program.config.defaultServer = Program.listeningGuild;
+            if (config != null)
+            {
+                Program.config.defaultChannel = Program.listeningServer;
+                Program.config.defaultServer = Program.listeningGuild; 
+            }
             API.SaveConfig();
         }
 

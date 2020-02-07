@@ -13,3 +13,18 @@ C:\Users\m\OneDrive - Department of Education and Training\Documents\dClient-mas
 C:\Users\m\OneDrive - Department of Education and Training\Documents\dClient-master\dClient\obj\Debug\netcoreapp3.1\dClient.csproj.CopyComplete
 C:\Users\m\OneDrive - Department of Education and Training\Documents\dClient-master\dClient\obj\Debug\netcoreapp3.1\dClient.dll
 C:\Users\m\OneDrive - Department of Education and Training\Documents\dClient-master\dClient\obj\Debug\netcoreapp3.1\dClient.pdb
+C:\Users\m\Documents\GitHub\dClient\dClient\bin\Debug\netcoreapp3.1\dClient.exe
+C:\Users\m\Documents\GitHub\dClient\dClient\bin\Debug\netcoreapp3.1\dClient.deps.json
+C:\Users\m\Documents\GitHub\dClient\dClient\bin\Debug\netcoreapp3.1\dClient.runtimeconfig.json
+C:\Users\m\Documents\GitHub\dClient\dClient\bin\Debug\netcoreapp3.1\dClient.runtimeconfig.dev.json
+C:\Users\m\Documents\GitHub\dClient\dClient\bin\Debug\netcoreapp3.1\dClient.dll
+C:\Users\m\Documents\GitHub\dClient\dClient\bin\Debug\netcoreapp3.1\dClient.pdb
+C:\Users\m\Documents\GitHub\dClient\dClient\bin\Debug\netcoreapp3.1\Colorful.Console.dll
+C:\Users\m\Documents\GitHub\dClient\dClient\bin\Debug\netcoreapp3.1\DSharpPlus.dll
+C:\Users\m\Documents\GitHub\dClient\dClient\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\m\Documents\GitHub\dClient\dClient\obj\Debug\netcoreapp3.1\dClient.csprojAssemblyReference.cache
+C:\Users\m\Documents\GitHub\dClient\dClient\obj\Debug\netcoreapp3.1\dClient.AssemblyInfoInputs.cache
+C:\Users\m\Documents\GitHub\dClient\dClient\obj\Debug\netcoreapp3.1\dClient.AssemblyInfo.cs
+C:\Users\m\Documents\GitHub\dClient\dClient\obj\Debug\netcoreapp3.1\dClient.csproj.CopyComplete
+C:\Users\m\Documents\GitHub\dClient\dClient\obj\Debug\netcoreapp3.1\dClient.dll
+C:\Users\m\Documents\GitHub\dClient\dClient\obj\Debug\netcoreapp3.1\dClient.pdb
