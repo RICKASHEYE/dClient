@@ -1,37 +1,35 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rickasheye\\source\\repos\\dClient\\dClient\\dClient.csproj": {}
+    "C:\\Users\\m\\OneDrive - Department of Education and Training\\Documents\\dClient-master\\dClient\\dClient.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rickasheye\\source\\repos\\dClient\\dClient\\dClient.csproj": {
+    "C:\\Users\\m\\OneDrive - Department of Education and Training\\Documents\\dClient-master\\dClient\\dClient.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rickasheye\\source\\repos\\dClient\\dClient\\dClient.csproj",
+        "projectUniqueName": "C:\\Users\\m\\OneDrive - Department of Education and Training\\Documents\\dClient-master\\dClient\\dClient.csproj",
         "projectName": "dClient",
-        "projectPath": "C:\\Users\\rickasheye\\source\\repos\\dClient\\dClient\\dClient.csproj",
-        "packagesPath": "C:\\Users\\rickasheye\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rickasheye\\source\\repos\\dClient\\dClient\\obj\\",
+        "projectPath": "C:\\Users\\m\\OneDrive - Department of Education and Training\\Documents\\dClient-master\\dClient\\dClient.csproj",
+        "packagesPath": "C:\\Users\\m\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\m\\OneDrive - Department of Education and Training\\Documents\\dClient-master\\dClient\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\ProgramData\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\rickasheye\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\m\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp2.2"
+          "netcoreapp3.1"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Users\\rickasheye\\AppData\\Roaming\\Cosmos User Kit\\packages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp2.2": {
+          "netcoreapp3.1": {
             "projectReferences": {}
           }
         },
@@ -42,7 +40,7 @@
         }
       },
       "frameworks": {
-        "netcoreapp2.2": {
+        "netcoreapp3.1": {
           "dependencies": {
             "Colorful.Console": {
               "target": "Package",
@@ -52,18 +50,27 @@
               "target": "Package",
               "version": "[3.2.3, )"
             },
-            "Microsoft.NETCore.App": {
-              "suppressParent": "All",
+            "GtkSharp": {
               "target": "Package",
-              "version": "[2.2.0, )",
-              "autoReferenced": true
+              "version": "[3.22.25.56, )"
             }
           },
           "imports": [
-            "net461"
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
           ],
           "assetTargetFallback": true,
-          "warn": true
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

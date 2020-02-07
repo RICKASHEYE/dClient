@@ -33,8 +33,7 @@ namespace dClient
                     {
                         //Load a new config
                         Console.Clear();
-                        Console.WriteLine("Seems like a config isnt been made padowan!!!");
-                        Console.WriteLine("Time to make a config template");
+                        Console.WriteLine("Creating config as it doesnt exist!!!");
                         new Config().SaveToFile("config.json");
                         Console.WriteLine("Press any key to close...");
                         Console.ReadKey();
@@ -44,8 +43,7 @@ namespace dClient
                     if (!File.Exists("cache.json"))
                     {
                         Console.Clear();
-                        Console.WriteLine("Seems like the cache file hasnt been made!!!");
-                        Console.WriteLine("Time to write cache");
+                        Console.WriteLine("Creating cache file as it doesnt exist!!!");
                         new Cache().SaveToFile("cache.json");
                         Console.WriteLine("Written file for cache");
                     }
@@ -77,6 +75,7 @@ namespace dClient
                 }
                 Console.WriteLine("Finished initialisation!");
                 Console.WriteLine("READY");
+                Console.WriteLine("get started with the command 'help'!");
                 client.MessageCreated += async e =>
                 {
                     if (e.Guild.Name == listeningGuild)

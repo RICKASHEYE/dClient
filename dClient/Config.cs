@@ -42,6 +42,9 @@ namespace dClient
         [JsonProperty("savecache")]
         internal string savecache = "true";
 
+        [JsonProperty("globalread")]
+        internal string globalread = "false";
+
         /// <summary>
         /// Your favourite color exposed as a DiscordColor object.
         /// </summary>
