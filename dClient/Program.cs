@@ -21,66 +21,72 @@ namespace dClient
 
         static void Main(string[] args)
         {
+            Initialise();
+        }
+
+        public static void Initialise()
+        {
             try
             {
+                Console.Clear();
                 Console.WriteLine("Checking for details...");
-                try
+                AppDomain.CurrentDomain.ProcessExit += new EventHandler(ProcessExit);
+                //Load the config file
+                Console.WriteLine("Checking for config");
+                if (!File.Exists("config.json"))
                 {
-                    AppDomain.CurrentDomain.ProcessExit += new EventHandler(ProcessExit);
-                    //Load the config file
-                    Console.WriteLine("Checking for config");
-                    if (!File.Exists("config.json"))
-                    {
-                        //Load a new config
-                        Console.Clear();
-                        Console.WriteLine("Creating config as it doesnt exist!!!");
-                        new Config().SaveToFile("config.json");
-                        Console.WriteLine("Press any key to close...");
-                        Console.ReadKey();
-                        Environment.Exit(0);
-                    }
-
-                    if (!File.Exists("cache.json"))
-                    {
-                        Console.Clear();
-                        Console.WriteLine("Creating cache file as it doesnt exist!!!");
-                        new Cache().SaveToFile("cache.json");
-                        Console.WriteLine("Written file for cache");
-                    }
-
-                    config = Config.LoadFromFile("config.json");
-                    cache = Cache.LoadFromFile("cache.json");
-                    listeningGuild = config.defaultServer;
-                    listeningServer = config.defaultChannel;
-                    if (config.customtitle == "true")
-                    {
-                        Console.Title = config._title + " - " + listeningServer + " on " + listeningGuild;
-                    }
-                    client = new DiscordClient(new DiscordConfiguration()
-                    {
-                        AutoReconnect = true,
-                        EnableCompression = true,
-                        LogLevel = LogLevel.Error,
-                        Token = config.Token,
-                        TokenType = TokenType.User,
-                        UseInternalLogHandler = true
-                    });
-                    Console.WriteLine("Trying to connect");
-                    StartAsync().Wait();
-                    Console.WriteLine("Connected!!!");
+                    //Load a new config
+                    Console.Clear();
+                    Console.WriteLine("Creating config as it doesnt exist!!!");
+                    new Config().SaveToFile("config.json");
+                    Console.WriteLine("Press any key to close...");
+                    Console.ReadKey();
+                    Environment.Exit(0);
                 }
-                catch (Exception e)
+
+                if (!File.Exists("cache.json"))
                 {
-                    Console.WriteLine(e);
+                    Console.Clear();
+                    Console.WriteLine("Creating cache file as it doesnt exist!!!");
+                    new Cache().SaveToFile("cache.json");
+                    Console.WriteLine("Written file for cache");
                 }
-                Console.WriteLine("Finished initialisation!");
+
+                config = Config.LoadFromFile("config.json");
+                cache = Cache.LoadFromFile("cache.json");
+                listeningGuild = config.defaultServer;
+                listeningServer = config.defaultChannel;
+                bool globalRead = bool.Parse(config.globalread);
+                bool customTitle = bool.Parse(config.customtitle);
+                if (customTitle && !globalRead)
+                {
+                    Console.Title = config._title + " - " + listeningServer + " on " + listeningGuild;
+                }
+                else if (globalRead)
+                {
+                    Console.Title = config._title + " - SET GLOBAL MODE";
+                }
+                client = new DiscordClient(new DiscordConfiguration()
+                {
+                    AutoReconnect = true,
+                    EnableCompression = true,
+                    LogLevel = LogLevel.Error,
+                    Token = config.Token,
+                    TokenType = TokenType.User,
+                    UseInternalLogHandler = true
+                });
+                Console.WriteLine("Trying to connect");
+                StartAsync().Wait();
+                Console.WriteLine("Connected!!!");
+                //Start to inject the mods
+                LoadMods mods = new LoadMods(config);
                 Console.WriteLine("READY");
                 Console.WriteLine("get started with the command 'help'!");
                 client.MessageCreated += async e =>
                 {
-                    if (e.Guild.Name == listeningGuild)
+                    if (e.Guild.Name == listeningGuild || globalRead)
                     {
-                        if (e.Channel.Name == listeningServer)
+                        if (e.Channel.Name == listeningServer || globalRead)
                         {
                             if (config.rlecolour == "true")
                             {
@@ -181,21 +187,25 @@ namespace dClient
                                 Console.WriteLine("(DELETED) " + e.Message.Content);
                             }
                         }
-                    }; 
+                    };
                 }
 
                 if (config.customtitle == "true")
                 {
                     client.TypingStarted += async e =>
                     {
-                        if (e.Channel.Name == listeningServer)
+                        if (e.Channel.Name == listeningServer && !globalRead)
                         {
                             if (e.Channel.Guild.Name == listeningGuild)
                             {
-                            Console.Title = config._title + " - " + e.User.Username + " is typing on " + listeningGuild + " in " + listeningServer;
+                                Console.Title = config._title + " - " + e.User.Username + " is typing on " + listeningGuild + " in " + listeningServer;
                             }
                         }
-                    }; 
+                        else
+                        {
+                            Console.Title = config._title + " - SET GLOBAL MODE";
+                        }
+                    };
                 }
 
                 Executor.ExecuteCommand();

@@ -45,6 +45,12 @@ namespace dClient
         [JsonProperty("globalread")]
         internal string globalread = "false";
 
+        [JsonProperty("LoadMods")]
+        internal string modLoad = "false";
+
+        [JsonProperty("ModDirectory")]
+        internal string modDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "Mods");
+
         /// <summary>
         /// Your favourite color exposed as a DiscordColor object.
         /// </summary>

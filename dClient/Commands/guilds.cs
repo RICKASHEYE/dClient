@@ -16,12 +16,20 @@ namespace dClient.Commands
 
         public override void Execute(string[] commandSplit, string otherCommand)
         {
-
-            foreach (string m in API.guilds())
+            Config config = Program.config;
+            bool globalChat = bool.Parse(config.globalread);
+            if (!globalChat)
             {
-                Console.WriteLine(m, Color.Gray);
+                foreach (string m in API.guilds())
+                {
+                    Console.WriteLine(m, Color.Gray);
+                }
+                Console.WriteLine("");
             }
-            Console.WriteLine("");
+            else
+            {
+                Console.WriteLine("Global read is enabled, to turn it off please execute 'settings setglobal false'");
+            }
             base.Execute(commandSplit, otherCommand);
         }
     }

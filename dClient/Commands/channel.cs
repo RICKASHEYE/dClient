@@ -14,13 +14,22 @@ namespace dClient.Commands
 
         public override void Execute(string[] commandSplit, string otherCommand)
         {
-            Program.listeningServer = otherCommand;
-            Console.WriteLine("Changed channel listening to: " + otherCommand, Color.Green);
-            if (Program.config.customtitle == "true")
+            Config config = Program.config;
+            bool globalRead = bool.Parse(config.globalread);
+            if (!globalRead)
             {
-                Console.Title = Program.config._title + " - " + Program.listeningServer + " on " + Program.listeningGuild;
+                Program.listeningServer = otherCommand;
+                Console.WriteLine("Changed channel listening to: " + otherCommand, Color.Green);
+                if (Program.config.customtitle == "true")
+                {
+                    Console.Title = Program.config._title + " - " + Program.listeningServer + " on " + Program.listeningGuild;
+                }
+                Console.WriteLine("");
             }
-            Console.WriteLine("");
+            else
+            {
+                Console.WriteLine("Global read is enabled, to turn it off please execute 'settings setglobal false'");
+            }
             base.Execute(commandSplit, otherCommand);
         }
     }

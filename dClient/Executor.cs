@@ -18,13 +18,16 @@ public class Executor
         }
         string otherCommand = String.Join(' ', listCommand);
         //Register all of the commands
-        Command[] commands = { new dClient.Commands.channel("channel", "Change channel by giving it a channel name"),
+        List<Command> commands = new List<Command>();
+        Command[] commands_ = { new dClient.Commands.channel("channel", "Change channel by giving it a channel name"),
                                new dClient.Commands.channels("channels", "Get all discord channels"),
                                new dClient.Commands.exit("exit", "Exit the current session"),
                                new dClient.Commands.guild("guild", "Change the current selected guild by giving the name as a argument"),
                                new dClient.Commands.guilds("guilds", "Get all of the discord guilds"),
                                new dClient.Commands.settings("settings", "Gives you an entire variety of commands to modify the config at runtime"),
-                               new dClient.Commands.stats("stats", "Gives you a variety of commands to execute to get stats of the current session") };
+                               new dClient.Commands.stats("stats", "Gives you a variety of commands to execute to get stats of the current session")};
+        commands.AddRange(commands_);
+        commands.Add(new dClient.Commands.help("help", "just this command that you might've executed", commands.ToArray()));
 
         bool executedCommand = false;
         foreach(Command com in commands)
@@ -49,6 +52,7 @@ public class Executor
                     if (tried == true)
                     {
                         commandSplitM[i] = commandSplitM[i].Replace('@', ' ');
+                        commandSplitM[i] = commandSplitM[i].Replace(commandSplitM[i], Color.Blue + commandSplitM[i]);
                         DiscordUser user = API.GetUserAsync(ulong.Parse(commandSplitM[i]));
                     }
                 }
